@@ -1,0 +1,60 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: aqua;
+    padding: 32px 64px;
+}
+
+.ProductBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: white;
+    min-height: 400px;
+    margin-top: 24px;
+}
+
+.CarousalContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+}
+
+.InfoContainer {
+    flex: 1;
+    background-color: thistle;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 24px;
+}
+
+.CarousalImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-height: 300px;
+}
+
+.CarousalImage {
+    height: 100%;
+}
+
+.Title {
+    font-size: 32px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.InfoBox {
+    font-size: 24px;
+    font-weight: semi-bold;
+    text-align: left;
+}
