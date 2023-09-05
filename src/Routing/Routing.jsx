@@ -7,6 +7,8 @@ import Header from '../Layout/Header'
 import ProductView from '../Component/Product/ProductView'
 import UserView from '../Component/USERVIEW/UserView'
 import PostView from '../Component/PostView/PostView'
+import RegForm from '../Component/Registration/RegForm'
+import LogIn from '../Component/LogIn/LogIn'
 
 const Routing = () => {
     return (
@@ -18,7 +20,8 @@ const Routing = () => {
 
                 <Route path='all-products' element={<Product />} />
                 <Route path='post' element={<PostView />} />
-
+                <Route path='reg_form' element={<RegForm />} />
+                <Route path='log_in_form' element={<LogIn />} />
                 <Route path='user' element={<UserView />} />
                 <Route path='all-products/products/:dp' element={<ProductView />} />
 

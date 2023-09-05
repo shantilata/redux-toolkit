@@ -15,6 +15,15 @@ const UserView = () => {
         <div>
             <h1>Users</h1>
             {isLoading && <h2>{isLoading}</h2>}
+            {error && <p>{error}</p>}
+            {
+                users && users.map(user => (
+                    <React.Fragment key={user.id}>
+                        <h4>{user.username}</h4>
+                        <h5>{user.email}</h5>
+                    </React.Fragment>
+                ))
+            }
         </div>
     )
 }
