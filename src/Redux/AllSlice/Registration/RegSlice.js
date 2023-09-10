@@ -2,8 +2,12 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
+
 const reg_api = "https://wtsacademy.dedicateddevelopers.us/api/user/signup";
 const log_in_api = "https://wtsacademy.dedicateddevelopers.us/api/user/signin"
+const profile_api = "https://wtsacademy.dedicateddevelopers.us/api/user/profile-details"
+const valid_token = window.sessionStorage.getItem("token");
+
 const initialState = {
     isLoading: false, error: null, data: null
 }
@@ -67,6 +71,19 @@ export const logInUser = createAsyncThunk("logInData/fetchLogInData",
 
     })
 
+export const userProfile = createAsyncThunk("profileData/fetchProfileData",
+    async () => {
+        const res = await axios.get(profile_api, {
+            headers: {
+                "x-access-token": valid_token,
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Access-Control-Allow-Origin": "*",
+            }
+        })
+           
+        return res?.data;
+    }
+)
 
 
 

@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch} from 'react-redux'
-import { regUser } from '../../Redux/AllSlice/Registration/RegSlice';
-const RegForm = () => {
+import { Sign_Up } from '../../Redux/AllSlice/Registration/AuthSlice';
+
+const Reg = () => {
+
     const dispatch = useDispatch();
+    // const { isLoading, status } = useSelector(state => state.auth)  //createSlice name
+    // console.log("UseSelector inPost :", isLoading, status);
 
 
     let [inputState, setInput] = useState({
@@ -29,13 +33,12 @@ const RegForm = () => {
         formData.append("password", inputState.pwd);
         formData.append("profile_pic", imgState);
 
-        dispatch(regUser(formData));
+        dispatch(Sign_Up(formData));
     }
-    
+
 
 
     return (
-
         <form action='' onSubmit={submitHandler}>
             <input type="text" name="fname" id="" placeholder='First Name' onChange={changeHandler} /> <br />
 
@@ -50,8 +53,10 @@ const RegForm = () => {
 
 
             <input type="submit" value="Register" />
+
+            {/* {status && status === 200 ? <Navigate to="/sign-in"></Navigate> : <p>Registration Error</p>} */}
         </form>
     )
 }
 
-export default RegForm
+export default Reg
